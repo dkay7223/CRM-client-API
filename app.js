@@ -6,7 +6,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const port = process.env.PORT || 3001;
-
+const MONGO_URL = process.env.MONGO_URL ||'mongodb+srv://admin:1234@cluster1.ztduzvx.mongodb.net/?retryWrites=true&w=majority'
 //API security
 app.use(helmet());
 
@@ -16,7 +16,7 @@ app.use(cors());
 //MongoDB Connection Setup
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

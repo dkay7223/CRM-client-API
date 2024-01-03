@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const JWT_REFRESH_SECRET_EXP_DAY= process.env.JWT_REFRESH_SECRET_EXP_DAY || 15
 const { verifyRefreshJWT, crateAccessJWT } = require("../helpers/jwt.helper");
 const { getUserByEmail } = require("../model/user/User.model");
 
@@ -19,7 +19,7 @@ router.get("/", async (req, res, next) => {
       const dBrefreshToken = userProf.refreshJWT.token;
 
       tokenExp = tokenExp.setDate(
-        tokenExp.getDate() + +process.env.JWT_REFRESH_SECRET_EXP_DAY
+        tokenExp.getDate() + JWT_REFRESH_SECRET_EXP_DAY
       );
 
       const today = new Date();
