@@ -1,5 +1,5 @@
 const redis = require("redis");
-const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379'
+const REDIS_URL = process.env.REDIS_URL || 'crmredisdb.iqyks0.clustercfg.aps1.cache.amazonaws.com:6379'
 const client = redis.createClient(REDIS_URL);
 
 client.on("error", function (error) {
