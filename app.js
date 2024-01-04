@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 80;
 const MONGO_URL = process.env.MONGO_URL ||'mongodb+srv://admin:1234@cluster1.ztduzvx.mongodb.net/?retryWrites=true&w=majority'
 //API security
 app.use(helmet());
