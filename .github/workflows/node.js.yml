@@ -2,9 +2,9 @@ name: Automating
 
 on:
   push:
-   branches: [ AWS ]
+   branches: [ aws2 ]
   pull_request:
-    branches: [ AWS ]
+    branches: [ aws2 ]
       
 jobs:
   build:
